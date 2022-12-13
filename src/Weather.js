@@ -11,13 +11,14 @@ export default function Weather() {
                     type="search"
                     placeholder="Enter a city"
                     className="form-control"
+                    autoFocus="on"
                         />
                     </div>
                     <div className="col-3">
                 <input
                     type="submit"
                     value="Search"
-                    className="btn btn-dark"
+                    className="btn btn-dark w-100"
                         />
                     </div>
                     </div>
@@ -25,14 +26,13 @@ export default function Weather() {
             <hr/>
             <div className="row">
                 <div className="col-4">
-                    <h2>
-                        -0,8°С
-                        <img src="https://ssl.gstatic.com/onebox/weather/48/snow_light.png" alt="snow" />
-                    </h2>
+                    <span className="temperature">-0,8</span>
+                    <span className="unit">°С</span>
+                    <img src="https://ssl.gstatic.com/onebox/weather/48/snow_light.png" alt="snow" className="img-main"/>
                 </div>
                 <div className="col-8">
                     <h1>Reykjavik</h1>
-                    <p>Thursday, March 19th, 18:41 </p>
+                    <p className="date opacity-50">Thursday, March 19th, 18:41 </p>
                 </div>
             </div>
             <hr/>
