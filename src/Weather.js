@@ -1,20 +1,21 @@
 import React, {useState} from "react";
 import axios from "axios";
 import "./Weather.css";
+import Time from "./Time";
 
 export default function Weather(props) {
     const [ready, setReady] = useState(false);
     const [weatherData, setWeatherData] = useState({});
 
     function handleResponse(response) {
-        console.log(response.data);
         setWeatherData ({
             temperature: Math.round(response.data.temperature.current),
             wind: Math.round(response.data.wind.speed),
             city: response.data.city,
             humidity: response.data.temperature.humidity,
             description: response.data.condition.description,
-            mainIcon: "http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png",
+            mainIcon: response.data.condition.icon_url,
+            time: new Date(response.data.time * 1000),
         });
         setReady(true);
     }
@@ -50,7 +51,9 @@ export default function Weather(props) {
                     </div>
                     <div className="col-md-auto">
                         <h1>{ weatherData.city}</h1>
-                        <p className="date opacity-50">Thursday, March 19th, 18:41 </p>
+                        <p className="date opacity-50">
+                            <Time date={ weatherData.time} />
+                        </p>
                         </div>
                 </div>
                 <hr />
