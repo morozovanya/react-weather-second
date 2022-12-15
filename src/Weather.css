@@ -16,13 +16,21 @@
     margin-bottom: 20px;
 }
 
-.Weather .temperature, .unit {
+.Weather .temperature {
     font-weight: 500;
-    font-size: 39.2px;
-    line-height: 84px;
+    font-size: 39px;
+    line-height: 38px;
 }
 
+.Weather .unit {
+    font-size: 37px;
+    line-height: 38px;
+}
+
+
+
+
 .Weather .img-main {
-    height:84px;
-    float:inline-end;
+    width:86px;
+    margin-left: 30px;
 }

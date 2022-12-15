@@ -24,7 +24,7 @@ export default function Weather() {
                     </div>
             </form>
             <hr/>
-            <div className="row">
+            <div className="row mt-4">
                 <div className="col-4">
                     <span className="temperature">-0,8</span>
                     <span className="unit">°С</span>
