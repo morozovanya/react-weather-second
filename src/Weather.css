@@ -8,13 +8,13 @@
 
 .Weather ul {
     list-style: none;
-    padding: 0;
-    margin: 0;
 }
 
 .Weather form {
     margin-bottom: 20px;
 }
+
+
 
 .Weather .temperature {
     font-weight: 500;
@@ -27,10 +27,10 @@
     line-height: 38px;
 }
 
-
-
-
-.Weather .img-main {
-    width:146px;
-    margin-top: -18px;
+.Weather canvas {
+    width:73px;
+    padding: 0;
+    margin-left: 15px;
+    margin-right: 15px;
 }
+

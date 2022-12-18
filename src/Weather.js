@@ -15,7 +15,7 @@ export default function Weather(props) {
             city: response.data.city,
             humidity: response.data.temperature.humidity,
             description: response.data.condition.description,
-            mainIcon: response.data.condition.icon_url,
+            icon: response.data.condition.icon,
             time: new Date(response.data.time * 1000),
         });
         setReady(true);
@@ -62,7 +62,7 @@ export default function Weather(props) {
                     </div>
                 </form>
                 <hr />
-                <WeatherBlock data={ weatherData} />
+                <WeatherBlock data={weatherData} />
                 </div>
         );
     } else {
