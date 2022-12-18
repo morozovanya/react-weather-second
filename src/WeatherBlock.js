@@ -1,14 +1,14 @@
 import React from "react";
 import Time from "./Time";
 import WeatherIcon from "./WeatherIcon";
+import WeatherTemperature from "./WeatherTemperature";
 
 export default function WeatherBlock(props) {
     return (
         <div className="WeatherBlock">
         <div className="row mt-3 justify-content-start align-items-center m-0">
                     <div className="col-md-auto">
-                    <span className="temperature">{props.data.temperature}</span>
-                    <span className="unit">°С</span>
+                    <WeatherTemperature celsius={props.data.temperature}/>
                 </div>
                 <WeatherIcon code={props.data.icon} alt={props.data.description}/>
                     <div className="col-md-auto ">

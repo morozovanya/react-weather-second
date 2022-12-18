@@ -22,9 +22,10 @@
     line-height: 38px;
 }
 
-.Weather .unit {
-    font-size: 37px;
-    line-height: 38px;
+
+
+.Weather .unit a{
+    text-decoration: none;
 }
 
 .Weather canvas {
