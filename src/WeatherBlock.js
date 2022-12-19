@@ -2,6 +2,7 @@ import React from "react";
 import Time from "./Time";
 import WeatherIcon from "./WeatherIcon";
 import WeatherTemperature from "./WeatherTemperature";
+import WeatherForecast from "./WeatherForecast";
 
 export default function WeatherBlock(props) {
     return (
@@ -9,8 +10,10 @@ export default function WeatherBlock(props) {
         <div className="row mt-3 justify-content-start align-items-center m-0">
                     <div className="col-md-auto">
                     <WeatherTemperature celsius={props.data.temperature}/>
-                </div>
-                <WeatherIcon code={props.data.icon} alt={props.data.description}/>
+                    </div>
+                    <div className="col-md-auto p-0 m-0">
+                        <WeatherIcon code={props.data.icon} alt={props.data.description} size={92} />
+                    </div>
                     <div className="col-md-auto ">
                     <h1 className="mb-1">{props.data.city}</h1>
                     <span className="text-capitalize opacity-50">{ props.data.description}</span>
@@ -29,65 +32,7 @@ export default function WeatherBlock(props) {
                     </ul>
                 </div>
                 <hr />
-                <div className="row text-center">
-                    <div className="col">
-                        <div className="forecast-day">Mon</div>
-                        <img src="https://ssl.gstatic.com/onebox/weather/48/snow_light.png" alt="snowing" className="forecast-emoji" />
-                        <div className="forecast-temperature">
-                            <span className="temperature-min">3</span>
-                            <span className="temperature-max">8</span>
-                        </div>
-                    
-                    </div>
-                    <div className="col">
-                        <div className="forecast-day">Mon</div>
-                        <img src="https://ssl.gstatic.com/onebox/weather/48/snow_light.png" alt="snowing" className="forecast-emoji" />
-                        <div className="forecast-temperature">
-                            <span className="temperature-min">3</span>
-                            <span className="temperature-max">8</span>
-                        </div>
-                    </div>
-                    <div className="col">
-                        <div className="forecast-day">Mon</div>
-                        <img src="https://ssl.gstatic.com/onebox/weather/48/snow_light.png" alt="snowing" className="forecast-emoji" />
-                        <div className="forecast-temperature">
-                            <span className="temperature-min">3</span>
-                            <span className="temperature-max">8</span>
-                        </div>
-                    </div>
-                    <div className="col">
-                        <div className="forecast-day">Mon</div>
-                        <img src="https://ssl.gstatic.com/onebox/weather/48/snow_light.png" alt="snowing" className="forecast-emoji" />
-                        <div className="forecast-temperature">
-                            <span className="temperature-min">3</span>
-                            <span className="temperature-max">8</span>
-                        </div>
-                    </div>
-                    <div className="col">
-                        <div className="forecast-day">Mon</div>
-                        <img src="https://ssl.gstatic.com/onebox/weather/48/snow_light.png" alt="snowing" className="forecast-emoji" />
-                        <div className="forecast-temperature">
-                            <span className="temperature-min">3</span>
-                            <span className="temperature-max">8</span>
-                        </div>
-                    </div>
-                    <div className="col">
-                        <div className="forecast-day">Mon</div>
-                        <img src="https://ssl.gstatic.com/onebox/weather/48/snow_light.png" alt="snowing" className="forecast-emoji" />
-                        <div className="forecast-temperature">
-                            <span className="temperature-min">3</span>
-                            <span className="temperature-max">8</span>
-                        </div>
-                    </div>
-                    <div className="col">
-                        <div className="forecast-day">Mon</div>
-                        <img src="https://ssl.gstatic.com/onebox/weather/48/snow_light.png" alt="snowing" className="forecast-emoji" />
-                        <div className="forecast-temperature">
-                            <span className="temperature-min">3</span>
-                            <span className="temperature-max">8</span>
-                        </div>
-                    </div>
-                </div>
+                <WeatherForecast />
         </div>
         
     );
