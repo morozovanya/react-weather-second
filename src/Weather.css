@@ -26,6 +26,8 @@
 
 .Weather .unit a{
     text-decoration: none;
+    color: black;
+    opacity: 50%;
 }
 
 .Weather canvas {

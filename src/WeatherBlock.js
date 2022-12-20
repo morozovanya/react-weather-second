@@ -2,7 +2,6 @@ import React from "react";
 import Time from "./Time";
 import WeatherIcon from "./WeatherIcon";
 import WeatherTemperature from "./WeatherTemperature";
-import WeatherForecast from "./WeatherForecast";
 
 export default function WeatherBlock(props) {
     return (
@@ -32,7 +31,7 @@ export default function WeatherBlock(props) {
                     </ul>
                 </div>
                 <hr />
-                <WeatherForecast />
+                
         </div>
         
     );
