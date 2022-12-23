@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./WeatherForecast.css";
 import axios from "axios";
 import WeatherForecastDay from "./WeatherForecastDay";
@@ -6,6 +6,10 @@ import WeatherForecastDay from "./WeatherForecastDay";
 export default function WeatherForecast(props) {
     let [loaded, setLoaded] = useState(false);
     let [forecast, setForecast] = useState(null);
+    
+    useEffect(() => {
+        setLoaded(false);
+    }, [props.city])
 
     function handleForecast(response) {
         setForecast(response.data.daily);
@@ -13,33 +17,18 @@ export default function WeatherForecast(props) {
     }
 
 
-
     if (loaded) {
         console.log(forecast);
         return (
         <div className="WeatherForecast">
-        <div className="row text-center">
-                    <div className="col">
-                        <WeatherForecastDay day={forecast[0]}/>
-                    </div>
-                    <div className="col">
-                        <WeatherForecastDay day={forecast[1]}/>
-                    </div>
-                    <div className="col">
-                        <WeatherForecastDay day={forecast[2]}/>
-                    </div>
-                    <div className="col">
-                        <WeatherForecastDay day={forecast[3]}/>
-                    </div>
-                    <div className="col">
-                        <WeatherForecastDay day={forecast[4]}/>
-                    </div>
-                    <div className="col">
-                        <WeatherForecastDay day={forecast[5]}/>
-                    </div>
-                    <div className="col">
-                        <WeatherForecastDay day={forecast[6]}/>
-                    </div>
+                <div className="row text-center">
+                    {forecast.map(function (dailyForecast, index) {
+                        return (
+                            <div className="col" key={index}>
+                                <WeatherForecastDay day={dailyForecast} />
+                            </div>
+                        );
+                    })}
             </div>
             </div>
         );
